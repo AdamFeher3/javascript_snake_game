@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Snake Game</title>
+</head>
+<body>
+    <main id="game">
+        <div id="menu">
+            <p>SNAKE<br>GAME</p>
+            <button type="button" id="start">START</button>
+        </div>
+        <div id="dif">
+            <p>CHOOSE DIFFICULTY</p>
+            <button type="button" id="easy">EASY</button>
+            <button type="button" id="medium">MEDIUM</button>
+            <button type="button" id="hard">HARD</button>
+        </div>
+        <div id="gameplay">
+            <div id="gameArea">
+                <div id="score">SCORE: 0</div>
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+        <div id="pause">
+            <p>PAUSE</p>
+        </div>
+        <div id="gameOver">
+            <p>GAME OVER</p>
+            <div id="scored">SCORE: 0</div>
+            <button type="button" class="restart">RESTART</button>
+        </div>
+        <div id="win">
+            <p>YOU WIN</p>
+            <button type="button" class="restart">RESTART</button>
+        </div>
+    </main>
+    <script src="key.js"></script>
+    <script src="snake.js"></script>
+    <script src="score.js"></script>
+    <script src="apple.js"></script>
+    <script src="script.js"></script>
+    <script src="gameLoop.js"></script>
+    <script src="gameEnd.js"></script>
+</body>
+</html>

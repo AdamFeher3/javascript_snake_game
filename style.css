@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    cursor: default;
+    image-rendering: pixelated;
+}
+
+body {
+    background-color: rgb(20,20,20);
+    overflow: hidden;
+}
+
+#game {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+}
+
+#menu,
+#dif,
+#gameplay,
+#pause,
+#gameOver,
+#win {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-content: center;
+    display: none;
+}
+
+#menu > p,
+#dif > p,
+#gameOver > p,
+#win > p {
+    color: white;
+    font-size: 10dvh;
+    text-align: center;
+    margin-bottom: 10dvh;
+}
+
+#gameOver > p {
+    margin-bottom: 1dvh;
+    animation: gameOverAnim 1.6s ease-in-out infinite;
+}
+
+#win > p {
+    font-size: 12dvh;
+    animation: winAnim 1.6s ease-in-out infinite;
+}
+
+@keyframes gameOverAnim {
+    0% { color: white; }
+    50% { color: rgb(200,0,0); }
+    100% { color: white; }
+}
+
+@keyframes winAnim {
+    0% { color: white; }
+    50% { color: rgb(200,150,0); }
+    100% { color: white; }
+}
+
+#start,
+#easy,
+#medium,
+#hard,
+.restart {
+    color: white;
+    font-size: 5dvh;
+    background: none;
+    border: 0.4dvh solid white;
+    padding: 2dvh;
+}
+
+#easy,
+#medium,
+#hard {
+    width: 24dvh;
+    margin-bottom: 2dvh;
+}
+
+#start:hover,
+#easy:hover,
+#medium:hover,
+#hard:hover,
+.restart:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+#gameArea {
+    position: relative;
+    width: 70dvh;
+    height: 80dvh;
+    border: 1dvh solid white;
+}
+
+#score,
+#canvas {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+#score,
+#scored {    
+    color: white;
+    align-content: center;
+    text-align: center;
+}
+
+#score {
+    height: 10dvh;
+    font-size: 4dvh;
+}
+
+#scored {
+    font-size: 3dvh;
+    margin-bottom: 10dvh;
+}
+
+#canvas {
+    aspect-ratio: 1/1;
+    border-top: 0.2dvh solid white;
+}
+
+#pause {
+    color: white;
+    font-size: 12dvh;
+    text-shadow: -1dvh 1dvh 2dvh black;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+}
