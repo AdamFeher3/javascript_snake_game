@@ -17,6 +17,8 @@ const restartBtn = document.getElementsByClassName("restart");
 
 const score = document.getElementById("score");
 const scored = document.getElementById("scored");
+const highscore = document.getElementById("highscore");
+const maxscored = document.getElementById("maxscored");
 
 // CANVAS
 /** @type {HTMLCanvasElement} */
@@ -52,6 +54,17 @@ document.body.onload = () => {
 
     menuScreen.style.display = "grid";
     game.state = MENU;
+
+    if ( !localStorage.getItem("loaded") ) {
+
+        localStorage.setItem("loaded", true);
+        return;
+    }
+    else {
+        localStorage.setItem("hs1", 0);
+        localStorage.setItem("hs2", 0);
+        localStorage.setItem("hs3", 0);
+    }
 };
 
 startBtn.addEventListener("click", () => {
@@ -84,6 +97,18 @@ async function loadGame() {
     if ( game.difficulty === easy ) setGameDif(10, 10, 0.2);
     else if ( game.difficulty === medium ) setGameDif(14, 14, 0.175);
     else if ( game.difficulty === hard ) setGameDif(18, 18, 0.15);
+
+    // GET HIGHSCORE
+    let hs = 0;
+    if ( game.difficulty === easy ) hs = localStorage.getItem("hs1");
+    else if ( game.difficulty === medium ) hs = localStorage.getItem("hs2");
+    else if ( game.difficulty === hard ) hs = localStorage.getItem("hs3");
+
+    if ( hs !== null ) {
+
+        maxScore = hs;
+        highscore.textContent = `HIGH SCORE: ${maxScore}`;
+    }
 
     // SET CANVAS SIZE
     canvas.width = game.width;

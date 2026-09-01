@@ -16,6 +16,7 @@ function endGame() {
     
         gameOverScreen.style.display = "grid";
         scored.textContent = `SCORE: ${scoreNum}`;
+        maxscored.textContent = `MAX SCORE: ${maxScore}`;
     }
     else if ( winGame ) setTimeout(() => {
         winScreen.style.display = "grid";

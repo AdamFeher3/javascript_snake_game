@@ -104,26 +104,34 @@ body {
 }
 
 #score,
+#highscore {
+    position: relative;
+    float: left;
+    color: white;
+    font-size: 3.6dvh;
+    align-content: center;
+    text-align: start;
+    width: 33dvh;
+    height: 10dvh;
+    margin-left: 2dvh;
+}
+
 #canvas {
     position: relative;
     float: left;
     width: 100%;
 }
 
-#score,
-#scored {    
+#scored,
+#maxscored {
     color: white;
+    font-size: 3dvh;
     align-content: center;
     text-align: center;
 }
 
-#score {
-    height: 10dvh;
-    font-size: 4dvh;
-}
-
-#scored {
-    font-size: 3dvh;
+#maxscored {
+    margin-top: 1dvh;
     margin-bottom: 10dvh;
 }
 
@@ -136,6 +144,6 @@ body {
     color: white;
     font-size: 12dvh;
     text-shadow: -1dvh 1dvh 2dvh black;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.4);
     backdrop-filter: blur(6px);
 }
