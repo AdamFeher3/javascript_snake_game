@@ -55,7 +55,11 @@ document.body.onload = () => {
     menuScreen.style.display = "grid";
     game.state = MENU;
 
-    if ( !localStorage.getItem("loaded") ) {
+    if (
+        localStorage.getItem("loaded") === null ||
+        localStorage.getItem("loaded") === undefined ||
+        !localStorage.getItem("loaded")
+    ) {
 
         localStorage.setItem("loaded", true);
         return;
