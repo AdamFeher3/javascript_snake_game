@@ -7,4 +7,4 @@
 </p>
 <h2>Game</h2>
 <p><a href="https://adamfeher3.github.io/javascript_snake_game/">PLAY GAME</a></p><br/>
-<img width="1920" height="1080" alt="snakeGame_img1" src="https://github.com/user-attachments/assets/c7e374fd-4557-4a96-bad1-e8a91a81d40a" />
+<img width="1280" height="720" alt="img1" src="https://github.com/user-attachments/assets/dab750b9-e838-48e6-bc33-a773e96c8677" />
