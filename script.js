@@ -4,6 +4,7 @@ const gameplayScreen = document.getElementById("gameplay");
 const pauseScreen = document.getElementById("pause");
 const gameOverScreen = document.getElementById("gameOver");
 const winScreen = document.getElementById("win");
+const mobileControl = document.getElementById("mobileControl");
 
 // BUTTONS
 const startBtn = document.getElementById("start");
@@ -87,6 +88,7 @@ for ( let i = 0; i < btns.length; i++ ) {
 
         difScreen.style.display = "none";
         gameplayScreen.style.display = "grid";
+        mobileControl.style.display = "block";
 
         await loadGame();
     });

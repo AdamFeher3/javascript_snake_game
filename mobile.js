@@ -4,9 +4,9 @@ let hold = false;
 let smx = 0;
 let smy = 0;
 
-const gameArea = document.getElementById("gameplay");
+const controlArea = mobileControl;
 
-gameArea.addEventListener("pointerdown", (e) => {
+controlArea.addEventListener("pointerdown", (e) => {
     
     if ( game.state !== PLAY ) return;
 
@@ -15,10 +15,10 @@ gameArea.addEventListener("pointerdown", (e) => {
     hold = true;
 });
 
-gameArea.addEventListener("pointerup", () => { hold = false; });
-gameArea.addEventListener("pointercancel", () => { hold = false; });
+controlArea.addEventListener("pointerup", () => { hold = false; });
+controlArea.addEventListener("pointercancel", () => { hold = false; });
 
-gameArea.addEventListener("pointermove", (e) => {
+controlArea.addEventListener("pointermove", (e) => {
 
     if ( game.state !== PLAY ) return;
 

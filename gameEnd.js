@@ -23,6 +23,7 @@ function endGame() {
     }, 300);
 
     gameplayScreen.style.display = "none";
+    mobileControl.style.display = "none";
     cancelAnimationFrame(game.GL);
 }
 
