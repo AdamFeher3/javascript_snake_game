@@ -8,12 +8,13 @@ document.addEventListener("pointerdown", (e) => {
     
     if ( game.state !== PLAY ) return;
 
-    smx = e.offsetX;
-    smy = e.offsetY;
+    smx = e.clientX;
+    smy = e.clientY;
     hold = true;
 });
 
 document.addEventListener("pointerup", () => { hold = false; });
+document.addEventListener("pointercancel", () => { hold = false; });
 
 document.addEventListener("pointermove", (e) => {
 
@@ -21,8 +22,8 @@ document.addEventListener("pointermove", (e) => {
 
     if ( !hold ) return;
 
-    const mx = e.offsetX;
-    const my = e.offsetY;
+    const mx = e.clientX;
+    const my = e.clientY;
 
     resetPos(mx, my);
 
