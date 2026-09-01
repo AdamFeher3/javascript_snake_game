@@ -6,4 +6,5 @@
   Press P to pause the game
 </p>
 <h2>Game</h2>
+<p>Press <a href="https://adamfeher3.github.io/javascript_snake_game/">GAME</a> to play</p>
 <img width="1920" height="1080" alt="snakeGame_img1" src="https://github.com/user-attachments/assets/c7e374fd-4557-4a96-bad1-e8a91a81d40a" />
