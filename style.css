@@ -11,6 +11,8 @@ body {
     overflow: hidden;
 }
 
+:root { --u: 1dvh; }
+
 #game {
     position: absolute;
     left: 0;
@@ -40,28 +42,30 @@ body {
 #gameOver > p,
 #win > p {
     color: white;
-    font-size: 10dvh;
+    font-size: 10vmin;
     text-align: center;
-    margin-bottom: 10dvh;
+    margin-bottom: 10vmin;
 }
 
 #gameOver > p {
-    margin-bottom: 1dvh;
+    margin-bottom: 1vmin;
     animation: gameOverAnim 1.6s ease-in-out infinite;
 }
 
 #win > p {
-    font-size: 12dvh;
+    font-size: 12vmin;
     animation: winAnim 1.6s ease-in-out infinite;
 }
 
 @keyframes gameOverAnim {
+
     0% { color: white; }
     50% { color: rgb(200,0,0); }
     100% { color: white; }
 }
 
 @keyframes winAnim {
+
     0% { color: white; }
     50% { color: rgb(200,150,0); }
     100% { color: white; }
@@ -73,17 +77,17 @@ body {
 #hard,
 .restart {
     color: white;
-    font-size: 5dvh;
+    font-size: 5vmin;
     background: none;
-    border: 0.4dvh solid white;
-    padding: 2dvh;
+    border: 0.4vmin solid white;
+    padding: 2vmin;
 }
 
 #easy,
 #medium,
 #hard {
-    width: 24dvh;
-    margin-bottom: 2dvh;
+    width: 24vmin;
+    margin-bottom: 2vmin;
 }
 
 #start:hover,
@@ -98,9 +102,9 @@ body {
 
 #gameArea {
     position: relative;
-    width: 70dvh;
-    height: 80dvh;
-    border: 1dvh solid white;
+    width: 70vmin;
+    height: 80vmin;
+    border: 1vmin solid white;
 }
 
 #score,
@@ -108,12 +112,12 @@ body {
     position: relative;
     float: left;
     color: white;
-    font-size: 3.6dvh;
+    font-size: 3.6vmin;
     align-content: center;
     text-align: start;
-    width: 33dvh;
-    height: 10dvh;
-    margin-left: 2dvh;
+    width: 33vmin;
+    height: 10vmin;
+    margin-left: 2vmin;
 }
 
 #canvas {
@@ -125,25 +129,25 @@ body {
 #scored,
 #maxscored {
     color: white;
-    font-size: 3dvh;
+    font-size: 3vmin;
     align-content: center;
     text-align: center;
 }
 
 #maxscored {
-    margin-top: 1dvh;
-    margin-bottom: 10dvh;
+    margin-top: 1vmin;
+    margin-bottom: 10vmin;
 }
 
 #canvas {
     aspect-ratio: 1/1;
-    border-top: 0.2dvh solid white;
+    border-top: 0.2vmin solid white;
 }
 
 #pause {
     color: white;
-    font-size: 12dvh;
-    text-shadow: -1dvh 1dvh 2dvh black;
+    font-size: 12vmin;
+    text-shadow: -1vmin 1vmin 2vmin black;
     background-color: rgba(0,0,0,0.4);
     backdrop-filter: blur(6px);
 }
