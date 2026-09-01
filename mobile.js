@@ -4,7 +4,9 @@ let hold = false;
 let smx = 0;
 let smy = 0;
 
-document.addEventListener("pointerdown", (e) => {
+const gameArea = document.getElementById("gameArea");
+
+gameArea.addEventListener("pointerdown", (e) => {
     
     if ( game.state !== PLAY ) return;
 
@@ -13,10 +15,10 @@ document.addEventListener("pointerdown", (e) => {
     hold = true;
 });
 
-document.addEventListener("pointerup", () => { hold = false; });
-document.addEventListener("pointercancel", () => { hold = false; });
+gameArea.addEventListener("pointerup", () => { hold = false; });
+gameArea.addEventListener("pointercancel", () => { hold = false; });
 
-document.addEventListener("pointermove", (e) => {
+gameArea.addEventListener("pointermove", (e) => {
 
     if ( game.state !== PLAY ) return;
 
