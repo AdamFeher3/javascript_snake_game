@@ -4,7 +4,7 @@ let hold = false;
 let smx = 0;
 let smy = 0;
 
-const gameArea = document.getElementById("gameArea");
+const gameArea = document.getElementById("gameplay");
 
 gameArea.addEventListener("pointerdown", (e) => {
     
