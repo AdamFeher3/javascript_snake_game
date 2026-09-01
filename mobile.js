@@ -4,7 +4,7 @@ let hold = false;
 let smx = 0;
 let smy = 0;
 
-document.addEventListener("mousedown", (e) => {
+document.addEventListener("pointerdown", (e) => {
     
     if ( game.state !== PLAY ) return;
 
@@ -13,9 +13,9 @@ document.addEventListener("mousedown", (e) => {
     hold = true;
 });
 
-document.addEventListener("mouseup", () => { hold = false; });
+document.addEventListener("pointerup", () => { hold = false; });
 
-document.addEventListener("mousemove", (e) => {
+document.addEventListener("pointermove", (e) => {
 
     if ( game.state !== PLAY ) return;
 
