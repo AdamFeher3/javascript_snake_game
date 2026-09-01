@@ -3,6 +3,7 @@
 <h2>How to play</h2>
 <p>
   Use Arrow keys or WASD to move snake<br/>
+  On mobile swipe on screen to move snake<br/>
   Press P to pause the game
 </p>
 <h2>Game</h2>
