@@ -18,7 +18,7 @@ function addScore() {
 
         highscore.textContent = `HIGH SCORE: ${maxScore}`;
     }
-
+    
     // WIN GAME
     if ( snake.body.length >=
         game.width / game.size *

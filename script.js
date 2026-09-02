@@ -16,6 +16,10 @@ const btns = [
 ];
 const restartBtn = document.getElementsByClassName("restart");
 
+const allBtn = [
+    startBtn, easyBtn, mediumBtn, hardBtn
+];
+
 const score = document.getElementById("score");
 const scored = document.getElementById("scored");
 const highscore = document.getElementById("highscore");

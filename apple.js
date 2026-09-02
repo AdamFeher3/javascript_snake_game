@@ -34,6 +34,7 @@ function updateApple() {
         apple.x === snake.body[0].x &&
         apple.y === snake.body[0].y
     ) {
+        eatApple();
         spawnApple();
         addScore();
         growSnake();

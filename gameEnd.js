@@ -12,14 +12,20 @@ function endGame() {
     
     game.state = MENU;
     
+    // SHOW GAME OVER SCREEN
     if ( gameOver ) {
     
         gameOverScreen.style.display = "grid";
         scored.textContent = `SCORE: ${scoreNum}`;
         maxscored.textContent = `MAX SCORE: ${maxScore}`;
+        gameoverSound();
     }
+
+    // SHOW WIN SCREEN
     else if ( winGame ) setTimeout(() => {
+
         winScreen.style.display = "grid";
+        winSound();
     }, 300);
 
     gameplayScreen.style.display = "none";
@@ -29,6 +35,13 @@ function endGame() {
 
 // RESTART GAME
 for ( let button of restartBtn ) {
+
+    button.addEventListener("mouseover", () => {
+
+        buttonAudio.pause();
+        buttonAudio.currentTime = 0;
+        buttonAudio.play();
+    });
 
     button.addEventListener("click", () => {
 
