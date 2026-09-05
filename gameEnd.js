@@ -63,4 +63,5 @@ function resetGame() {
     winGame = false;
     snakeDir = "U";
     nextDir = "U";
+    hold = false;
 }

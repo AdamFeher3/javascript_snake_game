@@ -3,7 +3,6 @@
 let hold = false;
 let smx = 0;
 let smy = 0;
-let playAudio = false;
 
 const controlArea = mobileControl;
 
@@ -21,79 +20,59 @@ controlArea.addEventListener("pointercancel", () => { hold = false; });
 
 controlArea.addEventListener("pointermove", (e) => {
 
-    if ( game.state !== PLAY ) return;
-
-    if ( !hold ) return;
+    if ( game.state !== PLAY || !hold ) return;
 
     const mx = e.clientX;
     const my = e.clientY;
 
-    resetPos(mx, my);
+    const dx = smx - mx;
+    const dy = smy - my;
 
-    if ( mx > smx + 50 ) {
-        if ( smx - mx < 0 ) {
+    if ( Math.abs(dx) < 50 && Math.abs(dy) < 50 ) return;
 
-            if ( snakeDir !== "L" && nextDir !== "L" && snakeDir !== "R" ) {
+    let changed = false;
+
+    if ( Math.abs(dx) > Math.abs(dy) ) {
+
+        if ( dx < 0 ) {
+
+            if ( snakeDir !== "L" && nextDir !== "L" && nextDir !== "R" ) {
                 nextDir = "R";
-                if ( !playAudio ) {
-                    snakeSound(2);
-                    playAudio = true;
-                }
+                snakeSound(2);
+                changed = true;
             }
-            return;
         }
-    }
-    if ( mx < smx - 50 ) {
-        if ( smx - mx > 0 ) {
-
-            if ( snakeDir !== "R" && nextDir !== "R" && snakeDir !== "L" ) {
+        else {
+            if ( snakeDir !== "R" && nextDir !== "R" && nextDir !== "L" ) {
                 nextDir = "L";
-                if ( !playAudio ) {
-                    snakeSound(2);
-                    playAudio = true;
-                }
+                snakeSound(2);
+                changed = true;
             }
-            return;
         }
     }
-    if ( my < smy - 50 ) {
-        if ( smy - my > 0 ) {
+    else {
+        if ( dy < 0 ) {
 
-            if ( snakeDir !== "D" && nextDir !== "D" && snakeDir !== "U" ) {
-                nextDir = "U";
-                if ( !playAudio ) {
-                    snakeSound(1);
-                    playAudio = true;
-                }
-            }
-            return;
-        }
-    }
-    if ( my > smy + 50 ) {
-        if ( smy - my < 0 ) {
-
-            if ( snakeDir !== "U" && nextDir !== "U" && snakeDir !== "D" ) {
+            if ( snakeDir !== "U" && nextDir !== "U" && nextDir !== "D" ) {
                 nextDir = "D";
-                if ( !playAudio ) {
-                    snakeSound(1);
-                    playAudio = true;
-                }
+                snakeSound(1);
+                changed = true;
             }
-            return;
+        }
+        else {
+            if ( snakeDir !== "D" && nextDir !== "D" && nextDir !== "U" ) {
+                nextDir = "U";
+                snakeSound(1);
+                changed = true;
+            }
         }
     }
-});
 
-function resetPos(mx, my) {
+    if ( changed ) {
 
-    if (
-        Math.abs(smx - mx) > 100 ||
-        Math.abs(smy - my) > 100
-    ) {
         smx = mx;
         smy = my;
-        playAudio = false;
     }
-}
+});
 
 document.addEventListener("contextmenu", (e) => { e.preventDefault(); });
