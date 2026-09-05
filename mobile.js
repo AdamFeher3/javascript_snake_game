@@ -3,6 +3,7 @@
 let hold = false;
 let smx = 0;
 let smy = 0;
+let playAudio = false;
 
 const controlArea = mobileControl;
 
@@ -29,42 +30,54 @@ controlArea.addEventListener("pointermove", (e) => {
 
     resetPos(mx, my);
 
-    if ( mx > smx + 100 ) {
+    if ( mx > smx + 50 ) {
         if ( smx - mx < 0 ) {
 
             if ( snakeDir !== "L" && nextDir !== "L" && snakeDir !== "R" ) {
                 nextDir = "R";
-                snakeSound(2);
+                if ( !playAudio ) {
+                    snakeSound(2);
+                    playAudio = true;
+                }
             }
             return;
         }
     }
-    if ( mx < smx - 100 ) {
+    if ( mx < smx - 50 ) {
         if ( smx - mx > 0 ) {
 
             if ( snakeDir !== "R" && nextDir !== "R" && snakeDir !== "L" ) {
                 nextDir = "L";
-                snakeSound(2);
+                if ( !playAudio ) {
+                    snakeSound(2);
+                    playAudio = true;
+                }
             }
             return;
         }
     }
-    if ( my < smy - 100 ) {
+    if ( my < smy - 50 ) {
         if ( smy - my > 0 ) {
 
             if ( snakeDir !== "D" && nextDir !== "D" && snakeDir !== "U" ) {
                 nextDir = "U";
-                snakeSound(1);
+                if ( !playAudio ) {
+                    snakeSound(1);
+                    playAudio = true;
+                }
             }
             return;
         }
     }
-    if ( my > smy + 100 ) {
+    if ( my > smy + 50 ) {
         if ( smy - my < 0 ) {
 
             if ( snakeDir !== "U" && nextDir !== "U" && snakeDir !== "D" ) {
                 nextDir = "D";
-                snakeSound(1);
+                if ( !playAudio ) {
+                    snakeSound(1);
+                    playAudio = true;
+                }
             }
             return;
         }
@@ -74,11 +87,12 @@ controlArea.addEventListener("pointermove", (e) => {
 function resetPos(mx, my) {
 
     if (
-        Math.abs(smx - mx) > 110 ||
-        Math.abs(smy - my) > 110
+        Math.abs(smx - mx) > 100 ||
+        Math.abs(smy - my) > 100
     ) {
         smx = mx;
         smy = my;
+        playAudio = false;
     }
 }
 
