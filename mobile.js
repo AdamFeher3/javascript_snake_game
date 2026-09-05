@@ -29,33 +29,53 @@ controlArea.addEventListener("pointermove", (e) => {
 
     resetPos(mx, my);
 
-    if ( mx > smx + 50 ) if ( smx - mx < 0 ) {
+    if ( mx > smx + 100 ) {
+        if ( smx - mx < 0 ) {
 
-        if ( snakeDir !== "L" && nextDir !== "L" ) nextDir = "R";
-        return;
+            if ( snakeDir !== "L" && nextDir !== "L" && snakeDir !== "R" ) {
+                nextDir = "R";
+                snakeSound(2);
+            }
+            return;
+        }
     }
-    if ( mx < smx - 50 ) if ( smx - mx > 0 ) {
+    if ( mx < smx - 100 ) {
+        if ( smx - mx > 0 ) {
 
-        if ( snakeDir !== "R" && nextDir !== "R" ) nextDir = "L";
-        return;
+            if ( snakeDir !== "R" && nextDir !== "R" && snakeDir !== "L" ) {
+                nextDir = "L";
+                snakeSound(2);
+            }
+            return;
+        }
     }
-    if ( my < smy - 50 ) if ( smy - my > 0 ) {
+    if ( my < smy - 100 ) {
+        if ( smy - my > 0 ) {
 
-        if ( snakeDir !== "D" && nextDir !== "D" ) nextDir = "U";
-        return;
+            if ( snakeDir !== "D" && nextDir !== "D" && snakeDir !== "U" ) {
+                nextDir = "U";
+                snakeSound(1);
+            }
+            return;
+        }
     }
-    if ( my > smy + 50 ) if ( smy - my < 0 ) {
+    if ( my > smy + 100 ) {
+        if ( smy - my < 0 ) {
 
-        if ( snakeDir !== "U" && nextDir !== "U" ) nextDir = "D";
-        return;
+            if ( snakeDir !== "U" && nextDir !== "U" && snakeDir !== "D" ) {
+                nextDir = "D";
+                snakeSound(1);
+            }
+            return;
+        }
     }
 });
 
 function resetPos(mx, my) {
 
     if (
-        Math.abs(smx - mx) > 100 ||
-        Math.abs(smy - my) > 100
+        Math.abs(smx - mx) > 110 ||
+        Math.abs(smy - my) > 110
     ) {
         smx = mx;
         smy = my;

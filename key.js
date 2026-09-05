@@ -6,6 +6,8 @@ const includeKeys = [
 ];
 
 document.addEventListener("keydown", (e) => {
+
+    if ( game.state !== PLAY ) return;
     
     // GET PRESSED KEY
     const key = e.code;
@@ -14,20 +16,29 @@ document.addEventListener("keydown", (e) => {
 
     // CHANGE DIRECTION
     if ( ( key === "KeyW" || key === "ArrowUp" )
-        && snakeDir !== "D" && nextDir !== "D" ) // MOVE UP
-        nextDir = "U";
-    
+        && snakeDir !== "D" && nextDir !== "D" && snakeDir !== "U" ) { // MOVE UP
+
+            nextDir = "U";
+            snakeSound(1);
+    }
     if ( ( key === "KeyS" || key === "ArrowDown" )
-        && snakeDir !== "U" && nextDir !== "U" ) // MOVE DOWN
-        nextDir = "D";
-    
+        && snakeDir !== "U" && nextDir !== "U" && snakeDir !== "D" ) { // MOVE DOWN
+
+            nextDir = "D";
+            snakeSound(1);
+    }
     if ( ( key === "KeyA" || key === "ArrowLeft" )
-        && snakeDir !== "R" && nextDir !== "R" ) // MOVE LEFT
-        nextDir = "L";
-    
+        && snakeDir !== "R" && nextDir !== "R" && snakeDir !== "L" ) { // MOVE LEFT
+
+            nextDir = "L";
+            snakeSound(2);
+    }
     if ( ( key === "KeyD" || key === "ArrowRight" )
-        && snakeDir !== "L" && nextDir !== "L" ) // MOVE RIGHT
-        nextDir = "R";
+        && snakeDir !== "L" && nextDir !== "L" && snakeDir !== "R" ) { // MOVE RIGHT
+
+            nextDir = "R";
+            snakeSound(2);
+    }
 
     // PAUSE GAME
     if ( key === "KeyP" ) {
